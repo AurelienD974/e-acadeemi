@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-acadEEMI</title>
+    <!-- <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<style>
+      .btn-fb{
+        background-color: #2B3595;
+        color:white;
+    }
+    .btn-tw{
+        background-color: rgb(35, 133, 224);
+        color:white;
+    }  .btn-gg{
+        background-color: rgb(228, 99, 131);
+        color:white;
+    }
+</style>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 home">
+             <img src="img/home.png" alt="">
+            </div>    
+            <div class="col-md-6">
+                <br>
+                <h2>Connecte toi</h2>
+       <form action="{{ path('security_login')}}" method="post">
+    
+           <div class="form_group">
+               <input placeholder="Email" required name="_username" type="text" class="form-control">
+           </div>
+           <div class="form_group">
+            <input placeholder="Mot de passe" required name="_password" type="password" class="form-control">
+        </div>
+        <div class="row">
+
+        <div class="form-group col-md-6">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                <label class="form-check-label" for="gridCheck1">
+                  Se souvenir de moi
+                </label>
+              </div>
+        </div>
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary">Connexion</button>
+        </div>
+    </div>
+
+       </form>
+      
+
+       <button class="btn btn-fb col-md-12">Connexion avec Facebook</button> 
+       <button class="btn btn-tw col-md-12">Connexion avec Twitter</button> 
+       <button class="btn btn-gg col-md-12">Connexion avec Google</button>
+    
+     
+        </div>
+     
+        </div>
+
+        </div>
+</body>
+</html>
+
+
+
+
+
