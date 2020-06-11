@@ -5,11 +5,99 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <!-- <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css"> -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        <style>
+
+
+nav li a {
+  color:#2B3595;
+  border-bottom: 2px solid #2B3595;
+}
+nav li a:hover{
+  color:#50D282;
+  border-bottom: 2.5px solid #50D282;
+}
+
+        </style>
+        {% endblock %}
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+      <nav class="nav justify-content-center">
+  
+        <a class="navbar-brand" href="#">
+          <img src="img/logo.png" height="30" alt="e-acadeemi logo">
+        </a>
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cours</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Marketing</a>
+            <a class="dropdown-item" href="#">Developpement</a>
+            <a class="dropdown-item" href="#">Design</a>
+            <!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div> -->
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link" href="#">Devoirs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Planning</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mise en relation</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Marketing</a>
+            <a class="dropdown-item" href="#">Developpement</a>
+            <a class="dropdown-item" href="#">Design</a>
+            <a class="dropdown-item" href="#">Enseignants</a>
+
+            <!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div> -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Qui sommes nous ?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Vidéo</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img src="img/home/user.png" alt=""></a>
+          <div class="dropdown-menu">
+           
+            <a class="dropdown-item" href="#">Mon compte</a>
+            <a class="dropdown-item" href="#">Mon évolution</a>
+          
+            {% if not app.user %}
+          
+                <a class="dropdown-item" href="{{ path('security_login')}}">Connexion</a>
+             
+            {% else %}
+          
+                <a class="dropdown-item" href="{{ path('security_logout')}}">Deconnexion</a>
+
+              {% endif %}
+
+            <!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div> -->
+        </li>
+        <!-- <li class="nav-item left">
+          <a class="nav-link" href="#"></a>
+        </li>  -->
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#">Compétences</a>
+        </li>
+   
+  
+    </nav>
+        <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <a class="navbar-brand" href="#">
+            <img src="img/logo.png" height="30" alt="e-acadeemi logo">
+          </a>
+            
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -52,8 +140,21 @@
               </ul>
            
             </div>
-          </nav>
+          </nav> -->
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    
+    
+
+      
+        {% endblock %}
     </body>
 </html>

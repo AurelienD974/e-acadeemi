@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+{% extends 'base.html.twig' %}
 
-    <title>{% block title %}Welcome | E-acadEEMI{% endblock %}</title>
-</head>
-<body>
-    
-</body>
-</html>
-
-{
+{% block title %}Welcome | E-acadEEMI{% endblock %}
 {% block stylesheets %}
 <style>
 
@@ -25,7 +13,14 @@
     background-position: center;
 
 }
-
+nav li a {
+  color:#2B3595;
+  border-bottom: 2px solid #2B3595;
+}
+nav li a:hover{
+  color:#50D282;
+  border-bottom: 2.5px solid #50D282;
+}
 .formation{
     color:#2B3595;
     padding-top: 5%;
@@ -65,18 +60,14 @@
 <div class="container-fluid home">
     <div class="row">
         <div class="col-md-6 formation">
-            <h1>Formation en ligne <br>
+            <h1>Bienvenue sur <br>
                 e-acadEEMI</h1>
-            <p>Suivez le bachelor chef de projets digitaux en formation continue à distance ! <br>
-            Prendre en main son avenir professionel n'a jamais été aussi simple.
+            <p>Bon courage pour tes premiers pas dans notre formation !
             </p>
-            <span>300€ / mois</span>
-        <span>3 cours gratuits pour découvrir la plateformes</span>
+        
             <div class="info">
         
-<br>
-        <a class="btn btn-regist" href="{{ path('security_registration')}}">S'inscrire</a>
-        <a class="btn btn-login" href="{{ path('security_login')}}">Connexion</a>
+
         
 
      <ul class="row share">

@@ -10,13 +10,30 @@ class SiteController extends AbstractController
     /**
      * @Route("/", name="site")
      */
-    public function index()
+    public function index_connect()
     {
-  
-        return $this->render('site/index.html.twig', [
+        
+        $repo = $this->getDoctrine()->getRepository(User::class);
+        
+        $user = $repo->findAll();
+        return $this->render('site/index_connect.html.twig', [
             'controller_name' => 'SiteController',
+            'user' => $user
         ]);
     }
+     /**
+     * @Route("/home", name="landingpage")
+     */
+    public function index()
+    {
+        
+      
+        return $this->render('site/index.html.twig', [
+            'controller_name' => 'SiteController',
+            
+        ]);
+    }
+    
 
     /**
      * @Route("/logout", name="logout_site")
