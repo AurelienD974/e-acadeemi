@@ -53,6 +53,9 @@ nav li a:hover{
    background-color: rgb(61, 70, 153);
    color: white;
 }
+.name{
+    color: #50D282;
+}
 </style>
 {% endblock %}
 {% block body %}
@@ -60,7 +63,7 @@ nav li a:hover{
 <div class="container-fluid home">
     <div class="row">
         <div class="col-md-6 formation">
-            <h1>Bienvenue sur <br>
+            <h1>Bienvenue <span class="name"> {{app.user.prenom}} </span> sur <br>
                 e-acadEEMI</h1>
             <p>Bon courage pour tes premiers pas dans notre formation !
             </p>
